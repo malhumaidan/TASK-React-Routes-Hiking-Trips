@@ -1,8 +1,10 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
 import tripsData from '../tripsData';
 
 function TripDetail() {
-  const trip = tripsData[0];
+  const { id } = useParams();
+  const trip = tripsData.find(e => e.id == id);
   return (
     <div className="modal-dialog modal-xl">
       <div className="modal-content">
